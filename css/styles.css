@@ -42,8 +42,7 @@ body.light {
   padding: 0;
   box-sizing: border-box;
   direction: rtl;
-  font-family: 'Markazi Text', serif;
-
+  font-family: "Markazi Text", serif;
 }
 
 html {
@@ -118,7 +117,7 @@ header.card {
 
 header.card h1 {
   color: var(--clr-white);
-  
+
   font-weight: 700;
   font-size: calc(var(--base-font) * 2);
 }
@@ -233,7 +232,6 @@ body.light .add .txt-container .txt-input {
 .item {
   flex: 1;
   color: var(--clr-gb-2);
- 
 }
 
 .item:hover {
@@ -319,7 +317,6 @@ footer {
   color: var(--clr-gb-5);
 }
 
-
 /* FILTER TODOS */
 
 .todos.active .card.checked,
@@ -341,11 +338,9 @@ footer {
   transition: 0.4s;
 }
 
-.todos.completed > .card.checked ~ .card.checked {
+.todos.completed > .card.checked {
   border-top: 0.2rem solid var(--clr-gb-6);
 }
-
-
 
 @media (max-width: 599px) {
   .stat {
@@ -375,5 +370,30 @@ footer {
   }
   header.card h1 {
     font-size: calc(var(--base-font) * 1.5);
+  }
+}
+
+.todos .card.dragging {
+  opacity: 0.5;
+}
+
+
+.todos .card.fall {
+  pointer-events: none;
+  animation: fall 0.2s forwards;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 0.5;
+    transform: translateX(20%);
+  }
+  50% {
+    transform: translateX(25%) rotateZ(40deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(30%) rotateZ(90deg);
+    opacity: 0;
   }
 }
